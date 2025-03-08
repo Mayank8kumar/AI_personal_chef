@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Ask your recipe - Here to help</h1>
+    
+    <form method="post">
+        {{ form.hidden_tag() }}  <!-- Flask CSRF Protection -->
+        {{ form.recipe_message() }}
+        <button type="submit">{{ form.submit.label }}</button>
+    </form>
+
+    <pre>{{ response_ai_recipe }}</pre>
+</body>
+</html>
